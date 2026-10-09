@@ -1,0 +1,5 @@
+# 5 人村の役職構成。順番は表示順。
+- {role: VILLAGER,  name: 村人,   name_en: Villager,  side: 村人, side_en: Village,  count: 2, ability: なし, ability_en: None}
+- {role: SEER,      name: 占い師, name_en: Seer,      side: 村人, side_en: Village,  count: 1, ability: 夜のターンに1名選択し、そのプレイヤーの陣営を知ることができる, ability_en: "Each night, chooses one player and learns that player's side"}
+- {role: WEREWOLF,  name: 人狼,   name_en: Werewolf,  side: 人狼, side_en: Werewolf, count: 1, ability: 夜のターンに1名選択し、そのプレイヤーを襲撃することでゲームから除外することができる, ability_en: "Each night, chooses one player to attack and remove from the game"}
+- {role: POSSESSED, name: 狂人,   name_en: Possessed, side: 人狼, side_en: Werewolf, count: 1, ability: 人狼陣営の勝利が自身の勝利になる, ability_en: "Wins when the werewolf side wins"}

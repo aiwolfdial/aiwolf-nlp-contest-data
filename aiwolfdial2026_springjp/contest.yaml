@@ -1,0 +1,39 @@
+id: aiwolfdial2026_springjp
+kind: domestic
+name: 2026 春季 国内大会
+name_en: Spring 2026 Domestic Contest
+language: ja
+owner: yharada
+form_url: https://forms.gle/6XxcmLrtNrAKZ5nP6
+paper_submission: false
+
+venue:
+  name: 人工知能学会全国大会2026 (JSAI2026)
+  url: https://www.ai-gakkai.or.jp/jsai2026/
+  session: 企画セッション「40周年記念関連セッション 企画セッション（ID（仮）37） 人狼知能コンテスト2026国内大会」プログラム
+  start: 2026-06-08
+  end: 2026-06-12
+
+sponsors:
+  - {name: Spiral.AI株式会社, url: https://go-spiral.ai/}
+
+rules:
+  talk_chars: 50
+  mention_chars: 50
+  response_timeout_sec: 60
+  anytime_talks_per_day: 4
+  anytime_phase_min: 10
+
+tracks:
+  turn5:    {name: 5人村,                name_en: 5-player village,       size: 5, mode: turn}
+  turn9:    {name: 9人村,                name_en: 9-player village,       size: 9, mode: turn}
+  anytime5: {name: いつでも発話トラック 5人村, name_en: Speak-anytime 5-player, size: 5, mode: anytime}
+
+rounds:
+  - id: main
+    tracks: [turn5, turn9, anytime5]
+    milestones:
+      - {key: registration, date: 2026-05-01, name: 参加登録〆切}
+      - {key: qualifier,    date: 2026-05-09, name: 予選(自己対戦) 結果提出〆切}
+      - {key: main_start,   date: 2026-05-11, name: 本戦開始（オンライン）}
+      - {key: awards,       date: 2026-06-08, end: 2026-06-12, name: 結果発表・表彰など　人工知能学会2026全国大会 企画セッション「40周年記念関連セッション 企画セッション（ID（仮）37） 人狼知能コンテスト2026国内大会」プログラム}
