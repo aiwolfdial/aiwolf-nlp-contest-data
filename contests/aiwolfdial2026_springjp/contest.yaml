@@ -3,7 +3,7 @@ kind: domestic
 name: 2026 春季国内大会
 name_en: Spring 2026 Domestic Contest
 language: ja
-owner: yharada
+owners: [yharada]           # 通知の宛先（ops の config.yaml の people のキー）
 form_url: https://forms.gle/6XxcmLrtNrAKZ5nP6
 paper_submission: false
 
@@ -31,6 +31,7 @@ tracks:                        # 表示順
 
 rounds:
   - id: main
+    public_name: JSAI
     tracks: [turn5, turn9, anytime5]
     milestones:
       - {key: registration, date: 2026-05-01, name: 参加登録〆切}

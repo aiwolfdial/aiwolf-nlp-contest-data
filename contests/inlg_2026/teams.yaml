@@ -1,0 +1,129 @@
+# 出場チーム（大会サーバの名簿から。連絡先は含めない）
+teams:
+- team: gotsumori-NLP
+  tracks:
+  - turn5
+  rounds:
+  - r1
+  - r2
+- team: ryanleeai
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: CanisLupus
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: CamelliaDragons
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: wool_100%
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: kataken14f
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: noisy_watcher
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: SunameLLi
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: yharada
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: Oxymoron
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: yshimoda
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r1
+  - r2
+- team: AGKAI
+  tracks:
+  - turn5
+  rounds:
+  - r2
+- team: UEC-IL
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r2
+- team: yatolab
+  tracks:
+  - turn5
+  - turn9
+  - anytime5
+  rounds:
+  - r2
+- team: Mackerel
+  tracks:
+  - turn5
+  - turn9
+  rounds:
+  - r2
+- team: carrot
+  tracks:
+  - turn5
+  - turn9
+  rounds:
+  - r2
+- team: NTT-HAI
+  tracks:
+  - turn5
+  rounds:
+  - r2
+- team: Luna
+  tracks:
+  - turn5
+  rounds:
+  - r2

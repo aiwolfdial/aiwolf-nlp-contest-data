@@ -3,7 +3,7 @@ kind: international            # domestic | international
 name: 2026 国際大会（INLG 2026）
 name_en: International Contest 2026 (INLG 2026)
 language: en                   # 対戦で使う言語
-owner: yharada
+owners: [yharada]           # 通知の宛先（ops の config.yaml の people のキー）
 form_url: https://forms.gle/53MJBSaLTe6xDw5o6
 paper_submission: true
 
@@ -29,6 +29,7 @@ tracks:                        # 表示順
 
 rounds:
   - id: r1
+    public_name: INLG            # ログの公開先 /var/www/html/aiwolf/<年>/<public_name>/
     name: 1次（INLG main conference 向け）
     name_en: Round 1 (for the INLG main conference)
     tracks: [turn5, turn9, anytime5]
@@ -38,6 +39,7 @@ rounds:
       - {key: results,      date: 2026-07-10, name: 1次結果返却, name_en: Round 1 results returned}
       - {key: paper,        date: 2026-07-15, name: INLG main conference 論文締切, name_en: INLG main conference paper deadline}
   - id: r2
+    public_name: INLG2
     name: 2次（AIWolfDial 2026 ワークショップ向け）
     name_en: Round 2 (for the AIWolfDial 2026 workshop)
     tracks: [turn5, turn9, anytime5]
