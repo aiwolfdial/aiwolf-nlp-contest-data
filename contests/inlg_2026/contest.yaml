@@ -33,8 +33,8 @@ rounds:
     name_en: Round 1 (for the INLG main conference)
     tracks: [turn5, turn9, anytime5]
     milestones:
-      - {key: registration, date: 2026-07-04, name: 「1次＋2次」参加チームの参加登録締切／接続確認締切, name_en: Registration and connection-check deadline for “Round 1 + Round 2” teams}
-      - {key: main_start,   date: 2026-07-06, open: true, name: 1次本戦（オンライン対戦）, name_en: Round 1 main competition (online)}
+      - {key: registration, date: 2026-07-04, name: 「1次＋2次」参加チームの参加登録締切／接続確認締切, name_en: Registration / connection check deadline for "Round 1 + Round 2" teams}
+      - {key: main_start,   date: 2026-07-06, open: true, name: 1次本戦（オンライン対戦）, name_en: Round 1 Main Competition (online matches)}
       - {key: results,      date: 2026-07-10, name: 1次結果返却, name_en: Round 1 results returned}
       - {key: paper,        date: 2026-07-15, name: INLG main conference 論文締切, name_en: INLG main conference paper deadline}
   - id: r2
@@ -42,10 +42,10 @@ rounds:
     name_en: Round 2 (for the AIWolfDial 2026 workshop)
     tracks: [turn5, turn9, anytime5]
     milestones:
-      - {key: registration, date: 2026-08-01, name: 「2次のみ」参加チームの参加登録締切／2次の接続確認締切, name_en: Registration deadline for “Round 2 only” teams / Round 2 connection-check deadline}
-      - {key: main_start,   date: 2026-08-03, open: true, name: 2次本戦（オンライン対戦）, name_en: Round 2 main competition (online)}
+      - {key: registration, date: 2026-08-01, name: 「2次のみ」参加チームの参加登録締切／2次の接続確認締切, name_en: Registration / connection check deadline for "Round 2 only" teams}
+      - {key: main_start,   date: 2026-08-03, open: true, name: 2次本戦（オンライン対戦）, name_en: Round 2 Main Competition (online matches)}
       - {key: results,      date: 2026-08-10, name: 2次結果返却, name_en: Round 2 results returned}
-      - {key: paper,        date: 2026-08-19, name: AIWolfDial 2026 ワークショップ論文締切（INLG main conference の採択通知後／main 不採択でも投稿可）, name_en: AIWolfDial 2026 workshop paper deadline (after the INLG main conference notification; submittable even if rejected from the main conference)}
+      - {key: paper,        date: 2026-08-19, name: AIWolfDial 2026 ワークショップ論文締切（INLG main conference の採択通知後／main 不採択でも投稿可）, name_en: AIWolfDial 2026 workshop paper deadline (after the INLG main conference acceptance notification; submittable even if rejected from the main conference)}
       - {key: notification, date: 2026-09-07, name: 採択通知, name_en: Notification of acceptance}
       - {key: camera_ready, date: 2026-09-15, name: カメラレディ原稿締切, name_en: Camera-ready deadline}
       - {key: workshop,     date: 2026-10-17, end: 2026-10-21, name: "AIWolfDial 2026 ワークショップ／[INLG 2026](https://2026.inlgmeeting.org/) カンファレンス（ユトレヒト）", name_en: "AIWolfDial 2026 workshop / [INLG 2026](https://2026.inlgmeeting.org/) conference (Utrecht)"}
