@@ -1,0 +1,59 @@
+# 大会の定義。新しい大会は、直近の同種の大会（国際なら inlg_*、国内なら aiwolfdial*_springjp）をコピーして直す。
+# 行末の [site] [form] [sync] [server] [results] は、その項目を使う道具。使う道具が無い項目は書かない。
+# 未定の値は null のままにする（サイトには「決定次第掲載します」と出て、検査が拾う）。
+
+id: inlg_2027                               # [site][form][sync][server][results] 小文字。サイトのディレクトリ名・URL と一致させる
+kind: international                         # domestic | international（今は参照用。将来のテンプレ選択に使う）
+name: 2027 国際大会（INLG 2027）            # [site][sync] 結果ページ・一覧・通知の表示名
+name_en: International Contest 2027 (INLG 2027)   # [site] 英語ページ用（国内大会は無くてよい）
+language: en                                # [form][server] 対戦言語。en なら併記フォーム・英語プロフィール
+owners: [yharada]                           # [sync] 新規登録の DM の宛先（ops の config.yaml の people のキー）
+form_url: null                              # [site] 参加フォーム。ops form create が書き戻す
+paper_submission: true                      # 論文投稿ページの有無（参照用）
+
+venue:                                      # [site] 併催の学会・会議。会期の end は一覧の「次回/過去」の判定にも使う
+  name: INLG 2027
+  url: https://2027.inlgmeeting.org/
+  place: 開催地（日本語）
+  place_en: Place (English)
+  session: null                             # 国内大会の企画セッション名など（任意）
+  start: 2027-10-01
+  end: 2027-10-05
+
+sponsors: []                                # [site] 例: - {name: 株式会社X, url: https://example.com/}
+
+rules:                                      # [site][server]
+  talk_chars: 125                           # 1 発話の文字数上限
+  mention_chars: null                       # メンション部分の上限。null なら talk_chars と同じ
+  response_timeout_sec: 60
+  anytime_talks_per_day: 4
+  anytime_phase_min: 10
+
+tracks:                                     # [site][form][sync][server][results] 表示順。id は変えない（teams.yaml と対応）
+  - {id: turn5,    name: ターン式 × 5人村,     name_en: Turn-Based × 5-player village,    size: 5, mode: turn,    games_per_team: [75, 100]}
+  - {id: turn9,    name: ターン式 × 9人村,     name_en: Turn-Based × 9-player village,    size: 9, mode: turn,    games_per_team: [12, 18]}
+  - {id: anytime5, name: いつでも発話 × 5人村, name_en: Speak-Anytime × 5-player village, size: 5, mode: anytime, games_per_team: [8, 12]}
+  # size の役職構成は roles/<size>.yaml。games_per_team はチーム当たり試合数の目安（表の表示と、対戦組合せの総試合数の計算に使う）
+
+rounds:                                     # [site][form][sync][server][results] 回が 1 つの大会でも 1 件書く
+  - id: r1
+    public_name: INLG                       # [server][results] ログの公開先 /var/www/html/aiwolf/<年>/<public_name>/
+    name: 1次（INLG main conference 向け）  # [site][form] 回が 2 つ以上のとき、見出しとフォームの選択肢に使う
+    name_en: Round 1 (for the INLG main conference)
+    tracks: [turn5, turn9, anytime5]
+    milestones:                             # [site] 日程。key は機械用（registration / main_start / results / paper …）、name が表示文
+      - {key: registration, date: 2027-07-04, name: 参加登録締切／接続確認締切, name_en: Registration / connection check deadline}
+      - {key: main_start,   date: 2027-07-06, open: true, name: 1次本戦（オンライン対戦）, name_en: Round 1 Main Competition (online matches)}
+      - {key: results,      date: 2027-07-10, name: 1次結果返却, name_en: Round 1 results returned}
+  - id: r2
+    public_name: INLG2
+    name: 2次（AIWolfDial 2027 ワークショップ向け）
+    name_en: Round 2 (for the AIWolfDial 2027 workshop)
+    tracks: [turn5, turn9, anytime5]
+    milestones:
+      - {key: registration, date: 2027-08-01, name: 参加登録締切, name_en: Registration deadline}
+      - {key: main_start,   date: 2027-08-03, open: true, name: 2次本戦（オンライン対戦）, name_en: Round 2 Main Competition (online matches)}
+      - {key: workshop,     date: 2027-10-01, end: 2027-10-05, name: ワークショップ, name_en: Workshop}
+
+texts:                                      # [site] 自由文（contest-text ショートコード）。無ければ「決定次第掲載します」
+  character_prompt: null
