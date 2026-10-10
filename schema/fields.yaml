@@ -4,60 +4,60 @@
 # 項目を足すときは行を足すだけ。使う側（サイトのショートコードや ops）が無い項目は記録されるだけで表示されない。
 
 basic:                      # 「基本」シート（値 / キー / 説明 の縦持ち）。key はドット区切りで入れ子にできる
-  - {key: name,                  type: text,    tier: every,     required: true,  desc: 大会名（日本語）。結果ページや通知に出る。例: 2027 国際大会（INLG 2027）}
-  - {key: name_en,               type: text_en, tier: every,     desc: 大会名（英語）。国際大会のみ。例: International Contest 2027 (INLG 2027)}
-  - {key: kind,                  type: enum,    tier: every,     required: true,  options: [domestic, international], desc: 国内大会なら domestic、国際大会なら international}
-  - {key: language,              type: enum,    tier: every,     required: true,  options: [ja, en], desc: 対戦で使う言語。フォームの併記やサーバのプロフィールの言語が決まる}
-  - {key: owners,                type: list,    tier: sometimes, required: true,  desc: 担当者（Slack の通知の宛先）。運営ツールの config.yaml の people のキーをカンマ区切りで。例: yharada}
-  - {key: paper_submission,      type: bool,    tier: every,     desc: 論文投稿ページを設けるなら TRUE}
-  - {key: form_url,              type: url,     tier: auto,      desc: 参加フォームの URL。ops form create が自動で書く（空のままでよい）}
-  - {key: venue.name,            type: text,    tier: every,     required: true,  desc: 併催の学会・会議の名前。例: INLG 2027 / 人工知能学会全国大会2027 (JSAI2027)}
-  - {key: venue.url,             type: url,     tier: every,     required: true,  desc: その公式サイトの URL}
-  - {key: venue.place,           type: text,    tier: every,     desc: 開催地（日本語）。例: オランダ・ユトレヒト}
-  - {key: venue.place_en,        type: text_en, tier: every,     desc: 開催地（英語）。例: Utrecht, the Netherlands}
-  - {key: venue.session,         type: text,    tier: every,     desc: 国内大会の企画セッション名（決まってから）。国際大会は空}
-  - {key: venue.start,           type: date,    tier: every,     required: true,  desc: 会期の初日。一覧の「次回大会／過去大会」の判定にも使う}
-  - {key: venue.end,             type: date,    tier: every,     required: true,  desc: 会期の最終日}
-  - {key: rules.talk_chars,      type: int,     tier: sometimes, required: true,  desc: 1 発話の文字数上限。例: 国際 125、国内 50}
-  - {key: rules.mention_chars,   type: int,     tier: sometimes, desc: メンション部分の追加上限。無ければ空（talk_chars と同じ扱い）}
-  - {key: rules.response_timeout_sec, type: int, tier: sometimes, required: true, desc: 応答の制限時間（秒）。例: 60}
-  - {key: rules.anytime_talks_per_day, type: int, tier: sometimes, desc: いつでも発話トラックの 1 日あたり発話回数。例: 4}
-  - {key: rules.anytime_phase_min, type: int,   tier: sometimes, desc: いつでも発話トラックの会話フェーズの長さ（分）。例: 10}
-  - {key: texts.character_prompt, type: text,   tier: sometimes, desc: キャラクター生成プロンプトの説明（レギュレーションの該当節に出る自由文。Markdown 可）}
+  - {key: name,                  type: text,    tier: every,     required: true,  desc: "大会名（日本語）。結果ページや通知に出る。例: 2027 国際大会（INLG 2027）"}
+  - {key: name_en,               type: text_en, tier: every,     desc: "大会名（英語）。国際大会のみ。例: International Contest 2027 (INLG 2027)"}
+  - {key: kind,                  type: enum,    tier: every,     required: true,  options: [domestic, international], desc: "国内大会なら domestic、国際大会なら international"}
+  - {key: language,              type: enum,    tier: every,     required: true,  options: [ja, en], desc: "対戦で使う言語。フォームの併記やサーバのプロフィールの言語が決まる"}
+  - {key: owners,                type: list,    tier: sometimes, required: true,  desc: "担当者（Slack の通知の宛先）。運営ツールの config.yaml の people のキーをカンマ区切りで。例: yharada"}
+  - {key: paper_submission,      type: bool,    tier: every,     desc: "論文投稿ページを設けるなら TRUE"}
+  - {key: form_url,              type: url,     tier: auto,      desc: "参加フォームの URL。ops form create が自動で書く（空のままでよい）"}
+  - {key: venue.name,            type: text,    tier: every,     required: true,  desc: "併催の学会・会議の名前。例: INLG 2027 / 人工知能学会全国大会2027 (JSAI2027)"}
+  - {key: venue.url,             type: url,     tier: every,     required: true,  desc: "その公式サイトの URL"}
+  - {key: venue.place,           type: text,    tier: every,     desc: "開催地（日本語）。例: オランダ・ユトレヒト"}
+  - {key: venue.place_en,        type: text_en, tier: every,     desc: "開催地（英語）。例: Utrecht, the Netherlands"}
+  - {key: venue.session,         type: text,    tier: every,     desc: "国内大会の企画セッション名（決まってから）。国際大会は空"}
+  - {key: venue.start,           type: date,    tier: every,     required: true,  desc: "会期の初日。一覧の「次回大会／過去大会」の判定にも使う"}
+  - {key: venue.end,             type: date,    tier: every,     required: true,  desc: "会期の最終日"}
+  - {key: rules.talk_chars,      type: int,     tier: sometimes, required: true,  desc: "1 発話の文字数上限。例: 国際 125、国内 50"}
+  - {key: rules.mention_chars,   type: int,     tier: sometimes, desc: "メンション部分の追加上限。無ければ空（talk_chars と同じ扱い）"}
+  - {key: rules.response_timeout_sec, type: int, tier: sometimes, required: true, desc: "応答の制限時間（秒）。例: 60"}
+  - {key: rules.anytime_talks_per_day, type: int, tier: sometimes, desc: "いつでも発話トラックの 1 日あたり発話回数。例: 4"}
+  - {key: rules.anytime_phase_min, type: int,   tier: sometimes, desc: "いつでも発話トラックの会話フェーズの長さ（分）。例: 10"}
+  - {key: texts.character_prompt, type: text,   tier: sometimes, desc: "キャラクター生成プロンプトの説明（レギュレーションの該当節に出る自由文。Markdown 可）"}
 
 tracks:                     # 「トラック」シート（1 行 1 トラック）
   columns:
-    - {key: id,            type: text, required: true, desc: 識別子（変えない）。例: turn5 / turn9 / anytime5}
-    - {key: name,          type: text, required: true, desc: 表示名（日本語）。例: ターン式 × 5人村}
-    - {key: name_en,       type: text_en, desc: 表示名（英語）}
-    - {key: size,          type: int,  required: true, desc: 村の人数。役職構成は roles/<人数>.yaml}
-    - {key: mode,          type: enum, required: true, options: [turn, anytime], desc: turn=ターン式 / anytime=いつでも発話}
-    - {key: games_min,     type: int,  desc: チーム当たり試合数の目安（下限）。例: 75}
-    - {key: games_max,     type: int,  desc: 同（上限）。例: 100}
+    - {key: id,            type: text, required: true, desc: "識別子（変えない）。例: turn5 / turn9 / anytime5"}
+    - {key: name,          type: text, required: true, desc: "表示名（日本語）。例: ターン式 × 5人村"}
+    - {key: name_en,       type: text_en, desc: "表示名（英語）"}
+    - {key: size,          type: int,  required: true, desc: "村の人数。役職構成は roles/<人数>.yaml"}
+    - {key: mode,          type: enum, required: true, options: [turn, anytime], desc: "turn=ターン式 / anytime=いつでも発話"}
+    - {key: games_min,     type: int,  desc: "チーム当たり試合数の目安（下限）。例: 75"}
+    - {key: games_max,     type: int,  desc: "同（上限）。例: 100"}
 
 rounds:                     # 「回」シート（1 行 1 回。1 次・2 次のような分け方。通常の大会は 1 行）
   columns:
-    - {key: id,            type: text, required: true, desc: 識別子。例: r1 / r2、1 回だけなら main}
-    - {key: name,          type: text, desc: 表示名（日本語）。回が 2 つ以上のとき見出しとフォームの選択肢に使う。例: 1次（INLG main conference 向け）}
-    - {key: name_en,       type: text_en, desc: 表示名（英語）}
-    - {key: public_name,   type: text, required: true, desc: ログの公開ディレクトリ名。例: INLG / INLG2 / JSAI}
-    - {key: tracks,        type: list, required: true, desc: この回で実施するトラック id をカンマ区切り。例: turn5, turn9, anytime5}
+    - {key: id,            type: text, required: true, desc: "識別子。例: r1 / r2、1 回だけなら main"}
+    - {key: name,          type: text, desc: "表示名（日本語）。回が 2 つ以上のとき見出しとフォームの選択肢に使う。例: 1次（INLG main conference 向け）"}
+    - {key: name_en,       type: text_en, desc: "表示名（英語）"}
+    - {key: public_name,   type: text, required: true, desc: "ログの公開ディレクトリ名。例: INLG / INLG2 / JSAI"}
+    - {key: tracks,        type: list, required: true, desc: "この回で実施するトラック id をカンマ区切り。例: turn5, turn9, anytime5"}
 
 milestones:                 # 「日程」シート（1 行 1 件）
   columns:
-    - {key: round,         type: text, required: true, desc: 回の id（「回」シートの id）}
-    - {key: key,           type: enum, required: true, options: [registration, connection_check, main_start, results, paper, notification, camera_ready, workshop, awards, other], desc: 種類。registration=登録締切 main_start=本戦開始 results=結果返却 paper=論文締切 workshop=ワークショップ awards=表彰}
-    - {key: date,          type: date, required: true, desc: 日付}
-    - {key: end,           type: date, desc: 期間なら終わりの日付（空なら 1 日）}
-    - {key: open,          type: bool, desc: 「〜」付きで出すなら TRUE（例: 本戦開始「7月6日〜」）}
-    - {key: name,          type: text, required: true, desc: 表示文（日本語）。例: 参加登録締切／接続確認締切}
-    - {key: name_en,       type: text_en, desc: 表示文（英語）}
+    - {key: round,         type: text, required: true, desc: "回の id（「回」シートの id）"}
+    - {key: key,           type: enum, required: true, options: [registration, connection_check, main_start, results, paper, notification, camera_ready, workshop, awards, other], desc: "種類。registration=登録締切 main_start=本戦開始 results=結果返却 paper=論文締切 workshop=ワークショップ awards=表彰"}
+    - {key: date,          type: date, required: true, desc: "日付"}
+    - {key: end,           type: date, desc: "期間なら終わりの日付（空なら 1 日）"}
+    - {key: open,          type: bool, desc: "「〜」付きで出すなら TRUE（例: 本戦開始「7月6日〜」）"}
+    - {key: name,          type: text, required: true, desc: "表示文（日本語）。例: 参加登録締切／接続確認締切"}
+    - {key: name_en,       type: text_en, desc: "表示文（英語）"}
 
 sponsors:                   # 「スポンサー」シート
   columns:
-    - {key: name,          type: text, required: true, desc: 名前}
-    - {key: name_en,       type: text_en, desc: 英語名}
-    - {key: url,           type: url,  desc: URL}
+    - {key: name,          type: text, required: true, desc: "名前"}
+    - {key: name_en,       type: text_en, desc: "英語名"}
+    - {key: url,           type: url,  desc: "URL"}
 
 extra:                      # 「追加項目」シート（値 / キー / メモ）。検証せず contest.yaml の extra: にそのまま入る
   desc: 仕組みに無い情報を一時的に持たせる場所。使う側ができたら basic に昇格させる
