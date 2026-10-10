@@ -56,7 +56,7 @@ rounds:
   - key: registration
     date: 2026-07-04
     name: 「1次＋2次」参加チームの参加登録締切／接続確認締切
-    name_en: Registration / connection check deadline for "Round 1 + Round 2" teams
+    name_en: Registration / connection check deadline for “Round 1 + Round 2” teams
   - key: main_start
     date: 2026-07-06
     open: true
@@ -82,7 +82,7 @@ rounds:
   - key: registration
     date: 2026-08-01
     name: 「2次のみ」参加チームの参加登録締切／2次の接続確認締切
-    name_en: Registration / connection check deadline for "Round 2 only" teams
+    name_en: Registration / connection check deadline for “Round 2 only” teams
   - key: main_start
     date: 2026-08-03
     open: true
