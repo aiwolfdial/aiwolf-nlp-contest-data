@@ -37,6 +37,16 @@ basic:
   desc: 対戦で使う言語。フォームの併記やサーバのプロフィールの言語が決まる
   label: 対戦言語
   use: フォーム,サーバ
+- key: rules_profile
+  type: enum
+  tier: every
+  required: true
+  options:
+  - international
+  - domestic
+  label: ルールセット
+  use: サイト,サーバ
+  desc: 「ルール」タブの列名から選ぶ（国際=international、国内=domestic）。値は contest.yaml の rules に展開される
 - key: owners
   type: list
   tier: sometimes
@@ -102,38 +112,6 @@ basic:
   desc: 会期の最終日
   label: 学会期間（終了）
   use: サイト
-- key: rules.talk_chars
-  type: int
-  tier: sometimes
-  required: true
-  desc: '1 発話の文字数上限。例: 国際 125、国内 50'
-  label: 1 発話の文字数上限
-  use: サイト,サーバ
-- key: rules.mention_chars
-  type: int
-  tier: sometimes
-  desc: メンション部分の追加上限。無ければ空（talk_chars と同じ扱い）
-  label: メンション部分の上限
-  use: サイト,サーバ
-- key: rules.response_timeout_sec
-  type: int
-  tier: sometimes
-  required: true
-  desc: '応答の制限時間（秒）。例: 60'
-  label: 応答の制限時間（秒）
-  use: サイト,サーバ
-- key: rules.anytime_talks_per_day
-  type: int
-  tier: sometimes
-  desc: 'いつでも発話トラックの 1 日あたり発話回数。例: 4'
-  label: 'いつでも発話: 1 日の発話回数'
-  use: サイト,サーバ
-- key: rules.anytime_phase_min
-  type: int
-  tier: sometimes
-  desc: 'いつでも発話トラックの会話フェーズの長さ（分）。例: 10'
-  label: 'いつでも発話: 会話フェーズ（分）'
-  use: サイト,サーバ
 - key: texts.character_prompt
   type: text
   tier: sometimes
@@ -184,6 +162,7 @@ tracks:
     desc: '同（上限）。例: 100'
     label: チーム当たり試合数（上限）
     use: サイト,サーバ
+  desc: 大会横断の「トラック」タブで管理する。大会側は回ごとの「実施トラック」に id を並べる
 rounds:
   columns:
   - key: id
@@ -297,3 +276,26 @@ milestone_keys:
   workshop: ワークショップ
   awards: 結果発表・表彰
   other: その他
+rules:
+  desc: 大会横断の「ルール」タブで管理する（行=項目、列=ルールセット名）
+  keys:
+  - key: talk_chars
+    label: 1 発話の文字数上限
+    type: int
+    desc: '例: 国際 125、国内 50'
+  - key: mention_chars
+    label: メンション部分の上限
+    type: int
+    desc: 無ければ空（talk_chars と同じ）
+  - key: response_timeout_sec
+    label: 応答の制限時間（秒）
+    type: int
+    desc: '例: 60'
+  - key: anytime_talks_per_day
+    label: 'いつでも発話: 1 日の発話回数'
+    type: int
+    desc: '例: 4'
+  - key: anytime_phase_min
+    label: 'いつでも発話: 会話フェーズ（分）'
+    type: int
+    desc: '例: 10'

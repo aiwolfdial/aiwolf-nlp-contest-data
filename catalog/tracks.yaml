@@ -1,0 +1,6 @@
+# 大会横断のトラック一覧（大会定義シートの「トラック」「トラック_en」タブと対応）。
+# 大会側は rounds[].tracks に id を書くだけ。games_per_team は既定値で、大会側で上書きできる（基本の「追加項目」に tracks[<id>].games_per_team）。
+tracks:
+  - {id: turn5,    name: ターン式 × 5人村,     name_en: Turn-Based × 5-player village,    size: 5, mode: turn,    games_per_team: [75, 100]}
+  - {id: turn9,    name: ターン式 × 9人村,     name_en: Turn-Based × 9-player village,    size: 9, mode: turn,    games_per_team: [12, 18]}
+  - {id: anytime5, name: いつでも発話 × 5人村, name_en: Speak-Anytime × 5-player village, size: 5, mode: anytime, games_per_team: [8, 12]}

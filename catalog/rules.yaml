@@ -1,0 +1,4 @@
+# 大会横断のルールセット（大会定義シートの「ルール」タブと対応）。大会側は rules_profile で 1 つ選ぶ。
+profiles:
+  international: {talk_chars: 125, mention_chars: null, response_timeout_sec: 60, anytime_talks_per_day: 4, anytime_phase_min: 10}
+  domestic:      {talk_chars: 50,  mention_chars: 50,   response_timeout_sec: 60, anytime_talks_per_day: 4, anytime_phase_min: 10}
