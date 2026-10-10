@@ -63,7 +63,7 @@ basic:
   type: list
   tier: sometimes
   required: true
-  desc: '担当者（Slack の通知の宛先）。運営ツールの config.yaml の people のキーをカンマ区切りで。例: yharada'
+  desc: '担当者（Slack の通知の宛先）。運営ツールの config.yaml の people のキー。複数ならカンマかスペースで区切る。例: yharada, tanaka'
   label: 担当者
   use: 通知
 - key: paper_submission

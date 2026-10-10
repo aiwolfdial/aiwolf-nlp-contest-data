@@ -50,7 +50,7 @@ def cast(v, t):
     if t == "int": return int(float(s))
     if t == "bool": return s.upper() == "TRUE"
     if t == "date": return (parse_date_cell(s) or {}).get("date")
-    if t == "list": return [x.strip() for x in re.split(r"[,、]", s) if x.strip()]
+    if t == "list": return [x.strip() for x in re.split(r"[,、\s　]+", s) if x.strip()]
     return s
 
 def _set(d, path, value):
