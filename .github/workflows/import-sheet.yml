@@ -1,0 +1,38 @@
+# 大会定義シートの「大会データを更新」ボタンから起動され、シートを読んで contest.yaml を書き、push する。
+name: 大会定義シートから更新
+on:
+  workflow_dispatch:
+    inputs:
+      book_id: {description: スプレッドシート id, required: true}
+      gids: {description: タブ名 → gid の JSON, required: true}
+      actor: {description: 押した人, required: false, default: ""}
+permissions:
+  contents: write
+concurrency:
+  group: import-sheet
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
+      BOOK: ${{ inputs.book_id }}
+      GIDS: ${{ inputs.gids }}
+      ACTOR: ${{ inputs.actor }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q pyyaml
+      - id: imp
+        run: python tools/sheet_import.py --book "$BOOK" --gids "$GIDS"
+      - name: commit and push
+        env:
+          CHANGED: ${{ steps.imp.outputs.changed }}
+        run: |
+          git add -A contests catalog
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "data: 大会定義シートから更新（${CHANGED}）"
+          git push

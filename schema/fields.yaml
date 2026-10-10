@@ -17,6 +17,7 @@ basic:
   desc: '大会名（英語）。国際大会のみ。例: International Contest 2027 (INLG 2027)'
   label: 大会名（英語）
   use: サイト
+  required_en: true
 - key: kind
   type: enum
   tier: every
@@ -37,6 +38,17 @@ basic:
   desc: 対戦で使う言語。フォームの併記やサーバのプロフィールの言語が決まる
   label: 対戦言語
   use: フォーム,サーバ
+- key: site_language
+  type: enum
+  tier: every
+  required: true
+  options:
+  - 日本語
+  - 英語
+  - 両方
+  label: サイトの言語
+  use: サイト
+  desc: 大会ページを作る言語。英語・両方なら「大会_en」タブの＊の行も必須になる（対戦言語とは別）
 - key: rules_profile
   type: enum
   tier: every
