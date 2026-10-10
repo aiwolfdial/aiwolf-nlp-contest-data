@@ -10,13 +10,13 @@ basic:
   required: true
   desc: '大会名（日本語）。結果ページや通知に出る。例: 2027 国際大会（INLG 2027）'
   label: 大会名
-  use: サイト,通知
+  use: サイト＊,フォーム＊,通知＊
 - key: name_en
   type: text_en
   tier: every
   desc: '大会名（英語）。国際大会のみ。例: International Contest 2027 (INLG 2027)'
   label: 大会名（英語）
-  use: サイト
+  use: サイト＊,フォーム
   required_en: true
 - key: kind
   type: enum
@@ -27,7 +27,7 @@ basic:
   - international
   desc: 国内大会なら domestic、国際大会なら international
   label: 国内 / 国際
-  use: フォーム,サーバ
+  use: フォーム＊,サーバ＊
 - key: language
   type: enum
   tier: every
@@ -37,7 +37,7 @@ basic:
   - en
   desc: 対戦で使う言語。フォームの併記やサーバのプロフィールの言語が決まる
   label: 対戦言語
-  use: フォーム,サーバ
+  use: フォーム＊,サーバ＊
 - key: site_language
   type: enum
   tier: every
@@ -47,7 +47,7 @@ basic:
   - 英語
   - 両方
   label: サイトの言語
-  use: サイト
+  use: サイト＊
   desc: 大会ページを作る言語。英語・両方なら「大会_en」タブの＊の行も必須になる（対戦言語とは別）
 - key: rules_profile
   type: enum
@@ -57,7 +57,7 @@ basic:
   - international
   - domestic
   label: ルールセット
-  use: サイト,サーバ
+  use: サイト＊,サーバ＊
   desc: 「ルール」タブの列名から選ぶ（国際=international、国内=domestic）。値は contest.yaml の rules に展開される
 - key: owners
   type: list
@@ -65,33 +65,33 @@ basic:
   required: true
   desc: '担当者（Slack の通知の宛先）。運営ツールの config.yaml の people のキー。複数ならカンマかスペースで区切る。例: yharada, tanaka'
   label: 担当者
-  use: 通知
+  use: 通知＊
 - key: paper_submission
   type: bool
   tier: every
   desc: 論文投稿ページを設けるなら TRUE
   label: 論文投稿あり
-  use: サイト
+  use: サイト,フォーム
 - key: form_url
   type: url
   tier: auto
   desc: 参加フォームの URL。ops form create が自動で書く（空のままでよい）
   label: 参加フォーム URL
-  use: サイト
+  use: サイト＊
 - key: venue.name
   type: text
   tier: every
   required: true
   desc: '併催の学会・会議の名前。例: INLG 2027 / 人工知能学会全国大会2027 (JSAI2027)'
   label: 学会・会議の名前
-  use: サイト
+  use: サイト＊
 - key: venue.url
   type: url
   tier: every
   required: true
   desc: その公式サイトの URL
   label: 学会の URL
-  use: サイト
+  use: サイト＊
 - key: venue.place
   type: text
   tier: every
@@ -116,14 +116,14 @@ basic:
   required: true
   desc: 会期の初日。一覧の「次回大会／過去大会」の判定にも使う
   label: 学会期間（開始）
-  use: サイト
+  use: サイト＊
 - key: venue.end
   type: date
   tier: every
   required: true
   desc: 会期の最終日
   label: 学会期間（終了）
-  use: サイト
+  use: サイト＊
 - key: texts.character_prompt
   type: text
   tier: sometimes
@@ -312,3 +312,4 @@ rules:
     label: 'いつでも発話: 会話フェーズ（分）'
     type: int
     desc: '例: 10'
+use_legend: D 列の用途。＊はその用途で必須。D1 で用途を選ぶと、必須の行が濃い黄色、使うだけの行が薄い黄色、空の必須が赤になる
