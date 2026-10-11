@@ -21,7 +21,7 @@ tools/sheet_import.py    シート → contest.yaml / catalog の変換（GitHub
 
 大会定義シート（`sheet.yaml` の URL）を直し、シートのメニュー「大会データ → 大会データを更新」を押す。
 `.github/workflows/import-sheet.yml` が `tools/sheet_import.py` でシートを読み、変わった大会の `contest.yaml` を書いて push する。
-シートは「リンクを知っている全員が閲覧可」にしてある（Actions は CSV で読むので認証が要らない）。
+シートは非公開でよい。ボタンを押すとシートの中身が圧縮されて Actions に渡されるので、Actions はシートを読みに行かない。
 
 項目を足すときは、まず使う側（サイトのショートコード、ops）を作り、`schema/fields.yaml` に行を足してから organizer-tool の `ops contest layout` でシートの形を作り直す。
 使う道具が無い項目は書かない、が散らかさない唯一の規則。
